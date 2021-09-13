@@ -1,4 +1,11 @@
 # demo
+```
+# install json server
+npm i json-server
+
+# run json server
+json-server db.json 
+```
 
 ## Build Setup
 
