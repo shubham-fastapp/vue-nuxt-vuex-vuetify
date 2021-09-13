@@ -7,43 +7,19 @@
       <v-container>
         <v-row>
           <!-- left side element -->
-          <v-col
-            cols="12"
-            sm="2"
-          >
-            <v-sheet
-              rounded="lg"
-              min-height="268"
-            >
-              <!--  -->
-            </v-sheet>
+          <v-col cols="1"></v-col>
+          <v-col cols="12" sm="2">
+            <LeftUserCard />
           </v-col>
 
           <!-- center element -->
-          <v-col
-            cols="8"
-            sm="8"
-          >
-            <v-sheet
-              min-height="70vh"
-              rounded="lg"
-            >
-              <!--  -->
-            </v-sheet>
+          <v-col cols="8" sm="6">
+            <PostList />
+          </v-col>
+          <v-col cols="12" sm="2">
+            <LeftUserCard />
           </v-col>
 
-          <!-- right side element -->
-          <v-col
-            cols="12"
-            sm="2"
-          >
-            <v-sheet
-              rounded="lg"
-              min-height="268"
-            >
-              <!--  -->
-            </v-sheet>
-          </v-col>
         </v-row>
       </v-container>
     </v-main>
@@ -51,18 +27,31 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue';
-  export default {
-    components: {
-      NavBar,
+import NavBar from "@/components/NavBar.vue";
+import LeftUserCard from "@/components/LeftUserCard.vue";
+import PostList from "@/components/PostList.vue";
+export default {
+  async fetch({ store }) {
+    console.log();
+    try {
+      await store.dispatch("user/setUser");
+      await store.dispatch("post/fetchPosts");
+    } catch (e) {
+      console.log("error ", e);
+    }
+  },
+  components: {
+    NavBar,
+    PostList,
+    LeftUserCard
+  },
+  data: () => ({
+    links: ["Dashboard", "Messages", "Profile", "Updates"],
+  }),
+  methods: {
+    refresh() {
+      this.$fetch();
     },
-    data: () => ({
-      links: [
-        'Dashboard',
-        'Messages',
-        'Profile',
-        'Updates',
-      ],
-    }),
-  }
+  },
+};
 </script>

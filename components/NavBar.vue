@@ -32,10 +32,9 @@
   export default {
     data: () => ({
       links: [
-        'Dashboard',
+        'Home',
         'Messages',
         'Profile',
-        'Updates',
       ],
     }),
   }

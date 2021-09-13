@@ -4,7 +4,22 @@
       "id": 1,
       "text": "Krish posted new thing",
       "date": "10-09-2021",
-      "like": 1,
+      "like": [
+        {
+          "users": [
+            {
+              "id": 1,
+              "firstName": "Krish",
+              "lastName": "Lee"
+            },
+            {
+              "id": 2,
+              "firstName": "Racks",
+              "lastName": "Jacson"
+            }
+          ]
+        }
+      ],
       "comment": [
         {
           "text": "This is a comment",
@@ -23,9 +38,19 @@
     },
     {
       "id": 2,
-      "text": "racks posted new thing",
+      "text": "Racks posted new thing",
       "date": "10-09-2021",
-      "like": 2,
+      "like": [
+        {
+          "users": [
+            {
+              "id": 2,
+              "firstName": "Racks",
+              "lastName": "Jacson"
+            }
+          ]
+        }
+      ],
       "comment": [
         {
           "text": "This is a comment",
@@ -38,15 +63,35 @@
       ],
       "user": {
         "id": 2,
-        "firstName": "racks",
-        "lastName": "jacson"
+        "firstName": "Racks",
+        "lastName": "Jacson"
       }
     },
     {
       "id": 3,
       "text": "New Post",
       "date": "10-09-2021",
-      "like": 3,
+      "like": [
+        {
+          "users": [
+            {
+              "id": 1,
+              "firstName": "Krish",
+              "lastName": "Lee"
+            },
+            {
+              "id": 2,
+              "firstName": "Racks",
+              "lastName": "Jacson"
+            },
+            {
+              "id": 3,
+              "firstName": "Denial",
+              "lastName": "Roast"
+            }
+          ]
+        }
+      ],
       "comment": [
         {
           "text": "This is a comment",
@@ -59,8 +104,8 @@
       ],
       "user": {
         "id": 3,
-        "firstName": "denial",
-        "lastName": "roast"
+        "firstName": "Denial",
+        "lastName": "Roast"
       }
     }
   ]

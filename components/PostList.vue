@@ -1,22 +1,17 @@
 <template>
     <div>
-        <Post />
+        <template v-for='post in posts'>
+            <Post :post='post' :key='post.id'/>
+        </template>
     </div>
 </template>
 
 <script>
-    import Post from '@/components/Post.vue';
     import { mapState } from 'vuex';
+    import Post from '@/components/Post.vue';
     export default {
-        async fetch({ store }) {
-            try {
-                await store.dispatch('post/fetchPosts')
-            } catch(e) {
-                console.log("error ", e)
-            }
-        },
-        component: {
-            Post
+        components: {
+            Post,
         },
         computed: mapState({
             posts: state => state.post.posts
