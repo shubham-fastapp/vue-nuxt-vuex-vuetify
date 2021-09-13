@@ -32,7 +32,6 @@ import LeftUserCard from "@/components/LeftUserCard.vue";
 import PostList from "@/components/PostList.vue";
 export default {
   async fetch({ store }) {
-    console.log();
     try {
       await store.dispatch("user/setUser");
       await store.dispatch("post/fetchPosts");
